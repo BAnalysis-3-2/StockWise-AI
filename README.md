@@ -1,1 +1,4 @@
-# Student_Portfolio
+AI Demand forecasting and Inventory Optimization System
+
+BACKGROUND:
+South African small and medium enterprises (SMEs) and township retailers often struggle with significant inventory mismanagement, leading to substantial financial losses. Traditional methods for demand forecasting, which rely on static spreadsheets and intuition, are unable to keep up with good market behavior, resulting in poor inventory decisions. This leads to overstocking, which ties up capital and increases storage costs, as well as understocking, which results in lost sales and dissatisfied customers. To address these problems, our project introduces an AI-powered system designed to accurately forecast product demand and optimize inventory levels in real-time. This solution aims to give access to advanced technology, empowering local retailers with the tools to make smarter, data-driven decisions, increases operational efficiency, and contribute to the economic growth of their communities.# Student_Portfolio
