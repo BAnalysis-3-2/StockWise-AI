@@ -1,4 +1,4 @@
-#AI Demand forecasting and Inventory Optimization System
+<h2>AI Demand forecasting and Inventory Optimization System</h2>
 
 
 BACKGROUND:
