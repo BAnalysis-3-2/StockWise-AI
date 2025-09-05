@@ -1,15 +1,17 @@
-<h2>AI Demand forecasting and Inventory Optimization System</h2>
+<h1>AI Demand forecasting and Inventory Optimization System</h1>
+
+<h3>Problem Definition</h3>
+
+SMEs in South Africa often struggle with inventory mismanagement due to inaccurate demand forecasting. This project addresses this problem by providing an AI-driven solution aligned with the theme of "AI Solution for Industries." The benefits of this AI in solving this issue can lead to improved decision-making.
 
 
-BACKGROUND:
+<h3>Key Features</h3>
 
-South African small and medium enterprises (SMEs) and township retailers often struggle with significant inventory mismanagement, leading to substantial financial losses. Traditional methods for demand forecasting, which rely on static spreadsheets and intuition, are unable to keep up with good market behavior, resulting in poor inventory decisions. This leads to overstocking, which ties up capital and increases storage costs, as well as understocking, which results in lost sales and dissatisfied customers. To address these problems, our project introduces an AI-powered system designed to accurately forecast product demand and optimize inventory levels in real-time. This solution aims to give access to advanced technology, empowering local retailers with the tools to make smarter, data-driven decisions, increases operational efficiency, and contribute to the economic growth of their communities.
-
-Objective:
-
-The objectives of the AI Demand Forecasting and Inventory Optimization System are multifaceted, aiming to improve business performance for South African retailers. The project seeks to achieve over 90% demand forecasting accuracy within six months, which will directly lead to a reduction in stockouts and excess inventory. A key financial objective is to generate more than R1 million in collective savings for participating SMEs and increase their average profit margins, demonstrating a strong ROI within 18 months. The system also has a revenue goal of R2 million within the first year by offering subscription-based access and establishing strategic partnerships. Finally, the project aims for broad market penetration by deploying the system across 100 retail outlets in Gauteng within 24 months, with a goal of achieving a 90% user adoption rate and establishing itself as the leading AI inventory management platform in the region.
-
-
-Methodology:
-
-This project uses a data-driven methodology to develop an AI-powered demand forecasting system. Historical retail sales data, combined with external factors such as seasonality and promotions, will be collected and preprocessed for analysis. Data will be collected from historical sales, inventory logs, and external sources, then cleaned and preprocessed using Python libraries. A hybrid ensemble model is developed, combining ARIMA for linear trends, XGBoost for feature-rich prediction, and LSTM networks for capturing nonlinear patterns, all organized via MLflow and Airflow. The system architecture includes a FastAPI and Django backend, a lightweight JavaScript frontend, and multi-database integration using PostgreSQL, InfluxDB, and MongoDB, deployed on Microsoft Azure with edge computing for low-latency access. An NLP-powered chatbot enhances user interaction, offering multilingual support and inventory insights. Model performance is evaluated using MAPE, WMAPE, and Forecast Bias, while inventory metrics like stockout rate and turnover guide operational impact. The solution is piloted across 15 stores in Gauteng, with real-time monitoring and iterative feedback loops ensuring scalability and academic alignment.
+- Demand Forecasting: Combines LSTM, XGBoost, and ARIMA models
+                      Adapts to diverse retail environments and consumer behaviors.
+- Inventory Optimization: Recommends optimal stock levels to minimize stockouts and overstocking.
+                          Dynamic safety stock calculations based on demand volatility.
+- Retail Intelligence Chatbot: Provides a user-friendly interface for SMEs to access inventory insights.
+                               Offers natural language processing for inventory questions and automatic business alerts.
+- Data Integration: Integrate retail data, social media sentiment, and weather patterns to give data for the model.
+- Scalability:  Designed to be deployed across diverse retail environments.
