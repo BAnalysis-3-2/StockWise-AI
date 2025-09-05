@@ -32,3 +32,44 @@ The primary business objectives of this project are to increase demand forecasti
 <h3>Business Background</h3>
 
 Inventory mismanagement challenges for SMEs lead to reduced scalability and profitability. This project aims to support 4IR goals by enhancing AI for business operations in this domain. This enables intelligent forecasting tools and increases productivity.
+
+
+<h3>Requirements</h3>
+
+ <h4>Functional Requirements</h4>
+ 
+- Data Acquisition: Extract and integrate retail sales, economic trends, and social media sentiment.
+- Model Training: Train and optimize hybrid ensemble forecasting models.
+- API Development: Create APIs for integration with retail systems and chatbot (if applicable).
+- Reporting: Generate insightful reports.
+
+<h4>Non-Functional Requirements</h4>
+
+- Security: Ensure compliance with South African privacy laws.
+- Scalability: The system must handle increasing data volumes.
+- Accuracy: Provide high-accuracy demand forecasting results.
+- User-Friendliness: Develop intuitive interfaces for the chatbot.
+
+
+  <h3>AI Solution</h3>
+
+To address the problem, this project focuses on implementing an AI-driven system. It combines diverse data sources such as retail sales, economic trends, and social media sentiment. It implements the use of hybrid ensemble models for accurate time-series sales information and forecasting, with the option to implement and make use of the chatbot for the stakeholders to interact with.
+
+
+<h3>Initial Assessment of Tools and Techniques</h3>
+
+- Machine Learning Platform: Python-based ML stack using scikit-learn, XGBoost, TensorFlow/Keras.
+- Time Series Forecasting: Prophet, ARIMA, LSTM networks.
+- Data Integration: Data is pre-processed using Python libraries.
+
+Machine Learning Approach
+
+*   The AI Demand Forecasting and Inventory Optimization System utilizes a Hybrid Ensemble Model that combines multiple forecasting approaches to maximize accuracy across different product categories, time horizons, and market conditions.
+*   Pre-trained models on large retail datasets enable quick adaptation to new stores with limited historical data through domain adaptation and few-shot learning techniques.
+*   Machine learning pipelines automatically extract relevant features from raw data including lag variables, rolling statistics, seasonal indicators, and external factor correlations.
+*   Continuous performance tracking with automated retraining triggers ensures models stay current with changing market dynamics and maintain forecasting accuracy.
+
+<h4>How it Learns:</h4>
+   Processes sequences of historical sales data to
+   identify complex temporal dependencies and patterns that
+   traditional time series methods miss. The LSTM architecture
