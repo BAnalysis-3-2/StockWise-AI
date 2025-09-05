@@ -92,7 +92,7 @@ To address the problem, this project focuses on implementing an AI-driven system
 - Scalability Risk: System degradation.
 
 
-  <h3>License</h3>
+<h3>License</h3>
 
 This project is licensed under the [Choose a License] License - see the [LICENSE.md] file for details.
 
