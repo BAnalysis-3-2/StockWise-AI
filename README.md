@@ -62,7 +62,7 @@ To address the problem, this project focuses on implementing an AI-driven system
 - Time Series Forecasting: Prophet, ARIMA, LSTM networks.
 - Data Integration: Data is pre-processed using Python libraries.
 
-Machine Learning Approach
+<h3>Machine Learning Approach</h3>
 
 *   The AI Demand Forecasting and Inventory Optimization System utilizes a Hybrid Ensemble Model that combines multiple forecasting approaches to maximize accuracy across different product categories, time horizons, and market conditions.
 *   Pre-trained models on large retail datasets enable quick adaptation to new stores with limited historical data through domain adaptation and few-shot learning techniques.
@@ -73,3 +73,17 @@ Machine Learning Approach
    Processes sequences of historical sales data to
    identify complex temporal dependencies and patterns that
    traditional time series methods miss. The LSTM architecture
+
+ <h3>Constraints</h3>
+
+- Data Quality: Potential inconsistencies in historical sales data.
+- Adoption Risk: Resistance from retailers comfortable with manual processes.
+- Technical Integration: Difficulties integrating with diverse POS systems.
+
+<h4>Risks</h4>
+
+- Data Quality Risk: Inconsistent or incomplete sales data compromise forecast accuracy.
+- Adoption Risk: Resistance to change from manual processes.
+- Technical Risk: Integration challenges with legacy systems.
+- Market Risk: Economic volatility affecting models.
+- Scalability Risk: System degradation.
