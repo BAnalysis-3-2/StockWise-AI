@@ -1,5 +1,6 @@
 <h1>AI Demand forecasting and Inventory Optimization System</h1>
 
+
 <h3>Problem Definition</h3>
 
 SMEs in South Africa often struggle with inventory mismanagement due to inaccurate demand forecasting. This project addresses this problem by providing an AI-driven solution aligned with the theme of "AI Solution for Industries." The benefits of this AI in solving this issue can lead to improved decision-making.
@@ -20,6 +21,7 @@ SMEs in South Africa often struggle with inventory mismanagement due to inaccura
 <h3>Business Objectives</h3>
 
 The primary business objectives of this project are to increase demand forecasting accuracy, minimize stockouts and overstock situations, improve inventory turnover rates, and provide accessible AI-driven insights for SME retailers. The ultimate goal is to enhance operational efficiency, reduce waste, and improve the financial performance of these businesses.
+
 
 <h3>Business Success Criteria</h3>
 
@@ -71,6 +73,7 @@ To address the problem, this project focuses on implementing an AI-driven system
 *   Continuous performance tracking with automated retraining triggers ensures models stay current with changing market dynamics and maintain forecasting accuracy.
 
 <h4>How it Learns:</h4>
+
    Processes sequences of historical sales data to
    identify complex temporal dependencies and patterns that
    traditional time series methods miss. The LSTM architecture
@@ -91,13 +94,3 @@ To address the problem, this project focuses on implementing an AI-driven system
 - Market Risk: Economic volatility affecting models.
 - Scalability Risk: System degradation.
 
-
-<h3>License</h3>
-
-This project is licensed under the [Choose a License] License - see the [LICENSE.md] file for details.
-
-
-<h3>Contact</h3>
-
-- [Your Name] - [Your Email]
-- [Project Repository Link]
