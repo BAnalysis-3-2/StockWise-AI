@@ -6,8 +6,8 @@ Small and medium-sized enterprises (SMEs) in South Africa often struggle with in
 
 <h3>Key Features</h3>
 
-Demand Forecasting:
--Combines LightGBM, XGBoost, and ARIMA models to deliver accurate predictions tailored to diverse retail environments and consumer behaviors.
+-Demand Forecasting:
+Combines LightGBM, XGBoost, and ARIMA models to deliver accurate predictions tailored to diverse retail environments and consumer behaviors.
 
 -Retail Intelligence Chatbot:
 Offers a user-friendly interface enabling SMEs to access inventory insights, perform natural language queries, and receive automated business alerts.
@@ -21,19 +21,19 @@ Designed to be deployed across various retail setups, from single stores to mult
 <h3>Business Objectives</h3>
 
 The primary objectives are to:
--Achieve demand forecasting accuracy of at least 90%
--Reduce stockouts by 15%
--Minimize overstocking by 10%
--Increase inventory turnover by 20%
--Enable SMEs to make data-driven decisions, reduce waste, and improve profitability
+Achieve demand forecasting accuracy of at least 90%
+Reduce stockouts by 15%
+Minimize overstocking by 10%
+Increase inventory turnover by 20%
+Enable SMEs to make data-driven decisions, reduce waste, and improve profitability
 
 <h3>Business Success Criteria</h3>
 
--Forecast Accuracy: ≥90%
--Stockout Reduction: ≥15%
--Overstock Reduction: ≥10%
--Inventory Turnover Increase: 20%
--User Adoption: 85% of targeted SMEs actively use the system
+Forecast Accuracy: ≥90%
+Stockout Reduction: ≥15%
+Overstock Reduction: ≥10%
+Inventory Turnover Increase: 20%
+User Adoption: 85% of targeted SMEs actively use the system
 
 <h3>Business Background</h3>
 
