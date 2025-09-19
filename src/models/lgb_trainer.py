@@ -1,9 +1,7 @@
 """
 src/models/lgb_trainer.py
 
-LightGBM training & prediction pipeline (modified to avoid compatibility issues).
-- Uses LightGBM callbacks for early stopping and logging (works across versions).
-- Provides helper functions to prepare features, train model, and produce recursive forecasts.
+LightGBM training & prediction pipeline.
 - Saves model and artifacts via joblib.
 
 Expectations:
@@ -26,9 +24,8 @@ from src.data.feature_engineering import (
     get_default_feature_list,
 )
 
-# -------------------------
+
 # Helpers
-# -------------------------
 def _safe_label_transform(le, series: pd.Series) -> pd.Series:
     """
     Map series values to label encoder integers safely.
@@ -40,9 +37,9 @@ def _safe_label_transform(le, series: pd.Series) -> pd.Series:
     mapping = {v: i for i, v in enumerate(classes)}
     return series.map(mapping).fillna(-1).astype(int)
 
-# -------------------------
+
 # Feature preparation
-# -------------------------
+
 def prepare_features_from_processed(
     processed_dir: str,
     lags: List[int] = [1, 7, 14],
@@ -90,9 +87,9 @@ def split_by_date(df_full: pd.DataFrame, val_days: int = 28, test_days: int = 28
     test = df_full[df_full["date"] >= test_start].copy()
     return train, val, test
 
-# -------------------------
+
 # Training
-# -------------------------
+
 def train_lightgbm_from_processed(
     processed_dir: str,
     model_out: str,
@@ -168,9 +165,9 @@ def train_lightgbm_from_processed(
 
     return {"model_path": model_out, "artifacts_path": artifacts_out, "val_mae": float(val_mae)}
 
-# -------------------------
+
 # Recursive forecasting
-# -------------------------
+
 def recursive_forecast_for_sku(model, df_hist: pd.DataFrame, sku: str, last_date: pd.Timestamp, horizon: int, features: List[str]) -> pd.DataFrame:
     """
     Recursively forecast horizon days for a single SKU using the provided model and history.
