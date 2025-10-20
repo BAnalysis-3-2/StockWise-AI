@@ -1,0 +1,19 @@
+{
+  "trained_on": "2025-10-19",
+  "model_type": "ARIMA",
+  "order": {
+    "trend": 0,
+    "exog": 0,
+    "ar": 2,
+    "ma": 2,
+    "seasonal_ar": 0,
+    "seasonal_ma": 0,
+    "reduced_ar": 2,
+    "reduced_ma": 2,
+    "exog_variance": 0,
+    "measurement_variance": 0,
+    "variance": 1
+  },
+  "aic": 893669.91,
+  "bic": 893715.91
+}
