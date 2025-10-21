@@ -75,37 +75,36 @@ Install the <code>requirements.txt</code> file to ensure correct versions of lib
 
 <h2>How the System Works</h2>
 
-<p>
 <h4>1. User Uploads Sales Data</h4>
 Format: CSV file (retail_store_inventory.csv)
-
-Contents: SKU-level daily sales, price, discount, inventory, weather, holiday, etc.
+columns: product id, price, discount, inventory level, weather, holiday, etc.
 
 <h4>2. Data Preprocessing (preprocess_data.py)</h4>
-Cleans and normalizes columns
-Constructs sku from store_id + product_id
-Sorts by SKU and date
+- Cleans and normalizes columns
+- Constructs sku from store_id + product_id
+- Sorts by SKU and date
 
 Saves:
-training_data.csv: cleaned raw data
-training_features.csv: engineered features
+- training_data.csv: cleaned raw data
+- training_features.csv: engineered features
 
 Feature Engineering Includes:
-Lag features: lag_1, lag_7, lag_14
-Rolling stats: rolling_mean_3, rolling_mean_7, rolling_std_7
-Temporal: day_of_week, month, year
-Price change, discount flag
+- Lag features: lag_1, lag_7, lag_14
+- Rolling stats: rolling_mean_3, rolling_mean_7, rolling_std_7
+- Temporal: day_of_week, month, year
+- Price change, discount flag
 
 <h4>3. Model Routing and Forecasting (sku_forecaster.py)</h4>
 
 Each SKU is routed based on row count:
-<30	ARIMA	Time series
-≥30	LSTM	Deep learning
+- <30	ARIMA	Time series
+- ≥30	LSTM	Deep learning
 
 Forecasts are saved to sku_forecast.csv, with columns:
-sku, date, forecast, model_used, mae
+- sku, date, forecast, model_used, mae
 
 <h4>4. Chatbot Interface</h4>
+
 Users interact via a terminal menu:
 
 Option	Function
@@ -120,18 +119,18 @@ Option	Function
 <h4>5. Simulation Engine (simulate_scenario.py)</h4>
 
 User inputs:
-SKU, price, discount, inventory, holiday flag
+- SKU, price, discount, inventory, holiday flag
 
 System:
-Loads last known feature row for that SKU
-Injects new values
+- Loads last known feature row for that SKU
+- Injects new values
 
 Runs prediction using:
-LightGBM (lgb_model.pkl)
-XGBoost (xgb_model.pkl)
+- LightGBM (lgb_model.pkl)
+- XGBoost (xgb_model.pkl)
 
 Outputs simulated demand from both models
-</p>
+
 
 <h3>Training Data</h3>
 <pre>
