@@ -75,62 +75,82 @@ Install the <code>requirements.txt</code> file to ensure correct versions of lib
 
 <h2>How the System Works</h2>
 
-<h4>1. User Uploads Sales Data</h4>
-- Format: CSV file (retail_store_inventory.csv)
-- columns: product id, price, discount, inventory level, weather, holiday, etc.
+<h3>1. User Uploads Sales Data</h3>
+<p><strong>Format:</strong> CSV file (<code>retail_store_inventory.csv</code>)</p>
+<p><strong>Columns:</strong> product id, price, discount, inventory, weather, holiday, etc.</p>
 
-<h4>2. Data Preprocessing (preprocess_data.py)</h4>
-- Cleans and normalizes columns
-- Constructs sku from store_id + product_id
-- Sorts by SKU and date
+<h3>2. Data Preprocessing (<code>preprocess_data.py</code>)</h3>
+<ul>
+  <li>Cleans and normalizes columns</li>
+  <li>Constructs <code>sku</code> from <code>store_id + product_id</code></li>
+  <li>Sorts by SKU and date</li>
+  <li>Saves:
+    <ul>
+      <li><code>training_data.csv</code>: cleaned raw data</li>
+      <li><code>training_features.csv</code>: engineered features</li>
+    </ul>
+  </li>
+  <li><strong>Feature Engineering Includes:</strong>
+    <ul>
+      <li>Lag features: <code>lag_1</code>, <code>lag_7</code>, <code>lag_14</code></li>
+      <li>Rolling stats: <code>rolling_mean_3</code>, <code>rolling_mean_7</code>, <code>rolling_std_7</code></li>
+      <li>Temporal: <code>day_of_week</code>, <code>month</code>, <code>year</code></li>
+      <li>Price change, discount flag</li>
+    </ul>
+  </li>
+</ul>
 
-<h5>Saves:</h5>
-- training_data.csv: cleaned raw data
-- training_features.csv: engineered features
+<h3>3. Model Routing and Forecasting (<code>sku_forecaster.py</code>)</h3>
+<p>Each SKU is routed based on row count:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Row Count</th>
+      <th>Model Used</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><30</td>
+      <td>ARIMA</td>
+      <td>Time series</td>
+    </tr>
+    <tr>
+      <td>>=30</td>
+      <td>LSTM</td>
+      <td>Deep learning</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Output:</strong> <code>sku_forecast.csv</code> with columns: <code>sku</code>, <code>date</code>, <code>forecast</code>, <code>model_used</code>, <code>mae</code></p>
 
-<h5>Feature Engineering Includes:</h5>
-- Lag features: lag_1, lag_7, lag_14
-- Rolling stats: rolling_mean_3, rolling_mean_7, rolling_std_7
-- Temporal: day_of_week, month, year
-- Price change, discount flag
+<h3>4. Chatbot Interface</h3>
+<p>Users interact via a terminal menu:</p>
+<ul>
+  <li>1 – View forecast for a SKU</li>
+  <li>2 – Compare forecasts between SKUs</li>
+  <li>4 – Show top SKUs by forecast</li>
+  <li>5 – Ask a custom question (NLP)</li>
+  <li>6 – Upload your own sales CSV and run forecast</li>
+  <li>7 – Simulate a demand scenario</li>
+  <li>8 – Exit</li>
+</ul>
 
-<h4>3. Model Routing and Forecasting (sku_forecaster.py)</h4>
-
-Each SKU is routed based on row count:
-- <30	ARIMA	Time series
-- ≥30	LSTM	Deep learning
-
-<h5>Forecasts are saved to sku_forecast.csv, with columns:</h5>
-- sku, date, forecast, model_used, mae
-
-<h4>4. Chatbot Interface</h4>
-
-<h5>Users interact via a terminal menu:</h5>
-
-<h5>Option	Function</h5>
-1	View forecast for a SKU
-2	Compare forecasts between SKUs
-4	Show top SKUs by forecast
-5	Ask a custom question (NLP)
-6	Upload your own sales CSV and run forecast
-7	Simulate a demand scenario
-8	Exit
-
-<h4>5. Simulation Engine (simulate_scenario.py)</h4>
-
-<h5>User inputs:</h5>
-- SKU, price, discount, inventory, holiday flag
-
-<h5>System:</h5>
-- Loads last known feature row for that SKU
-- Injects new values
-
-<h5>Runs prediction using:</h5>
-- LightGBM (lgb_model.pkl)
-- XGBoost (xgb_model.pkl)
-
+<h3>5. Simulation Engine (<code>simulate_scenario.py</code>)</h3>
+<p><strong>User Inputs:</strong> SKU, price, discount, inventory, holiday flag</p>
+<p><strong>System Actions:</strong></p>
+<ul>
+  <li>Loads last known feature row for that SKU</li>
+  <li>Injects new values</li>
+  <li>Runs prediction using:
+    <ul>
+      <li>LightGBM (<code>lgb_model.pkl</code>)</li>
+      <li>XGBoost (<code>xgb_model.pkl</code>)</li>
+    </ul>
+  </li>
 <h5>Outputs simulated demand from both models</h5>
-
+</ul>
 
 <h3>Training Data</h3>
 <pre>
