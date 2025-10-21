@@ -9,7 +9,7 @@ def load_forecast(user_folder):
     forecast_path = os.path.join(user_folder, "reports", "sku_forecast.csv")
     
     if not os.path.exists(forecast_path):
-        print(f"Forecast file not found at: {forecast_path}")
+        
         return pd.DataFrame()
     
     try:
@@ -68,7 +68,7 @@ def view_forecast(sku, forecast_df, user_folder):
         return f"❌ No forecast found for {sku}"
 
     model_used = sku_forecast["source_model"].iloc[0]
-    model_info = f"\n🧠 Forecast generated using: {model_used}"
+    model_info = f"\n Forecast generated using: {model_used}"
 
     return sku_forecast[["date", "forecast"]].to_string(index=False) + model_info
 
@@ -124,7 +124,7 @@ def handle_nlp_query(query, forecast_df, mae_df, user_folder):
         return ""
 
     else:
-        return "🤖 Sorry, I couldn't understand that. Try asking about a forecast, comparison, or model explanation."
+        return " Sorry, I couldn't understand that. Try asking about a forecast, comparison, or model explanation."
 
 def model_breakdown(forecast_df):
     if forecast_df.empty or "source_model" not in forecast_df.columns:
@@ -147,11 +147,11 @@ def run_forecast(user_folder):
     result = subprocess.run(["python", pipeline_path, user_folder])
 
     # === Confirm success ===
-    print("\n🎯 Forecast completed.")
+    print("\n Forecast completed.")
     print("📁 Results saved to:")
     print(f"   - Forecasts: {user_folder}/reports/sku_forecast.csv")
     print(f"   - Summary:  {user_folder}/reports/forecast_summary.json\n")
-    input("🔄 Press Enter to return to the main menu...")
+    input(" Press Enter to return to the main menu...")
 
 
 
@@ -177,11 +177,11 @@ def main():
         else:
             print("1. View forecast for a SKU")
             print("2. Compare forecasts between SKUs")
-            print("4. Show top SKUs by forecast")
-            print("5. Ask a custom question (NLP)")
-            print("6. Upload your own sales CSV and run forecast")
-            print("7. Simulate a demand scenario")
-            print("8. Exit")
+            print("3. Show top SKUs by forecast")
+            print("4. Ask a custom question (NLP)")
+            print("5. Upload your own sales CSV and run forecast")
+            print("6. Simulate a demand scenario")
+            print("7. Exit")
 
         choice = input(" Your choice: ").strip()
 
@@ -226,12 +226,12 @@ def main():
                 sku1 = input("Enter first SKU: ").strip().upper()
                 sku2 = input("Enter second SKU: ").strip().upper()
                 print(compare_skus(sku1, sku2, forecast_df))
-            elif choice == "4":
+            elif choice == "3":
                 print(top_skus(forecast_df))
-            elif choice == "5":
+            elif choice == "4":
                 query = input(" Ask your question: ")
                 print(handle_nlp_query(query, forecast_df, mae_df, user_folder))
-            elif choice == "6":
+            elif choice == "5":
                 path = input("📁 Enter path to your CSV file: ").strip()
                 if os.path.exists(path):
                     os.makedirs(user_folder, exist_ok=True)
@@ -251,8 +251,8 @@ def main():
                         print("⚠️ Forecast pipeline may have failed. Please check your data or logs.")
                 else:
                     print("❌ File not found. Please check the path.")
-            elif choice == "7":
-                print("🧪 Simulate a demand scenario")
+            elif choice == "6":
+                print(" Simulate a demand scenario")
                 sku = input("Enter SKU (e.g. S001_P0001): ").strip().upper()
                 price = input("Enter price (e.g. 99.99): ").strip()
                 discount = input("Enter discount (e.g. 0.15 for 15%): ").strip()
@@ -275,7 +275,7 @@ def main():
                     os.system(cmd)
                 except Exception as e:
                     print("❌ Invalid input. Please enter correct values.")
-            elif choice == "8":
+            elif choice == "7":
                 print("👋 Goodbye!")
                 break
             else:
