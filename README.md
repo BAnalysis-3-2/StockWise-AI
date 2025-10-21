@@ -76,19 +76,19 @@ Install the <code>requirements.txt</code> file to ensure correct versions of lib
 <h2>How the System Works</h2>
 
 <h4>1. User Uploads Sales Data</h4>
-Format: CSV file (retail_store_inventory.csv)
-columns: product id, price, discount, inventory level, weather, holiday, etc.
+- Format: CSV file (retail_store_inventory.csv)
+- columns: product id, price, discount, inventory level, weather, holiday, etc.
 
 <h4>2. Data Preprocessing (preprocess_data.py)</h4>
 - Cleans and normalizes columns
 - Constructs sku from store_id + product_id
 - Sorts by SKU and date
 
-Saves:
+<h5>Saves:</h5>
 - training_data.csv: cleaned raw data
 - training_features.csv: engineered features
 
-Feature Engineering Includes:
+<h5>Feature Engineering Includes:</h5>
 - Lag features: lag_1, lag_7, lag_14
 - Rolling stats: rolling_mean_3, rolling_mean_7, rolling_std_7
 - Temporal: day_of_week, month, year
@@ -100,14 +100,14 @@ Each SKU is routed based on row count:
 - <30	ARIMA	Time series
 - ≥30	LSTM	Deep learning
 
-Forecasts are saved to sku_forecast.csv, with columns:
+<h5>Forecasts are saved to sku_forecast.csv, with columns:</h5>
 - sku, date, forecast, model_used, mae
 
 <h4>4. Chatbot Interface</h4>
 
-Users interact via a terminal menu:
+<h5>Users interact via a terminal menu:</h5>
 
-Option	Function
+<h5>Option	Function</h5>
 1	View forecast for a SKU
 2	Compare forecasts between SKUs
 4	Show top SKUs by forecast
@@ -118,18 +118,18 @@ Option	Function
 
 <h4>5. Simulation Engine (simulate_scenario.py)</h4>
 
-User inputs:
+<h5>User inputs:</h5>
 - SKU, price, discount, inventory, holiday flag
 
-System:
+<h5>System:</h5>
 - Loads last known feature row for that SKU
 - Injects new values
 
-Runs prediction using:
+<h5>Runs prediction using:</h5>
 - LightGBM (lgb_model.pkl)
 - XGBoost (xgb_model.pkl)
 
-Outputs simulated demand from both models
+<h5>Outputs simulated demand from both models</h5>
 
 
 <h3>Training Data</h3>
