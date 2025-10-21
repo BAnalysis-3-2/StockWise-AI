@@ -1,0 +1,7 @@
+{
+  "trained_on": "2025-10-17",
+  "model_type": "LSTM",
+  "input_window": 10,
+  "scaler_min": -9.99,
+  "scaler_max": 518.55
+}
