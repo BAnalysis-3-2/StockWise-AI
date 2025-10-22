@@ -62,16 +62,28 @@ The system processes sequences of historical sales data to uncover complex tempo
   <li>pandas, numpy, matplotlib, seaborn</li>
 </ul>
 
-<h2>Installation</h2>
-<pre>
-git clone https://github.com/your-username/demand-forecasting-engine.git
-cd demand-forecasting-engine
-\venv\Scripts\activate        # activate environment
-pip install -r requirements.txt
-</pre>
-<p>
-Install the <code>requirements.txt</code> file to ensure correct versions of libraries are used.
-</p>
+<h2>Getting Started</h2>
+
+<p>To clone this project to your local machine:</p>
+
+<pre><code>git clone https://github.com/BAnalysis-3-2/StockWise-AI.git
+cd StockWise-AI
+</code></pre>
+
+<p>Create and activate a virtual environment:</p>
+
+<pre><code>python -m venv venv
+venv\Scripts\activate
+</code></pre>
+
+<p>Install all required dependencies:</p>
+
+<pre><code>python -m pip install -r requirements.txt</code></pre>
+
+<p>You're now ready to run the system locally!</p>
+
+<hr />
+
 
 <h2>How the System Works</h2>
 
